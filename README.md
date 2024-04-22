@@ -17,8 +17,7 @@ This project is generated with the [create-solana-dapp](https://github.com/solan
 #### Clone the repo
 
 ```shell
-git clone dapp scaffold
-cd dapp
+git clone dapp-scaffold
 ```
 
 #### Install Dependencies
