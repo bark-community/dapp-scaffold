@@ -25,15 +25,18 @@
     "@tailwindcss/typography": "0.5.10",
     "@tanstack/react-query": "5.24.1",
     "@tanstack/react-query-next-experimental": "5.24.1",
+    "axios": "^1.6.8",
     "bs58": "5.0.0",
     "buffer": "6.0.3",
     "daisyui": "4.10.2",
     "encoding": "0.1.13",
+    "helmet": "^7.1.0",
     "jotai": "2.6.5",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "2.4.1",
+    "react-icons": "^5.1.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

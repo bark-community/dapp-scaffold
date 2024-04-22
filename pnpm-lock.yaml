@@ -41,6 +41,9 @@ dependencies:
   '@tanstack/react-query-next-experimental':
     specifier: 5.24.1
     version: 5.24.1(@tanstack/react-query@5.24.1)(next@13.4.4)(react@18.2.0)
+  axios:
+    specifier: ^1.6.8
+    version: 1.6.8
   bs58:
     specifier: 5.0.0
     version: 5.0.0
@@ -53,6 +56,9 @@ dependencies:
   encoding:
     specifier: 0.1.13
     version: 0.1.13
+  helmet:
+    specifier: ^7.1.0
+    version: 7.1.0
   jotai:
     specifier: 2.6.5
     version: 2.6.5(@types/react@18.2.33)(react@18.2.0)
@@ -68,6 +74,9 @@ dependencies:
   react-hot-toast:
     specifier: 2.4.1
     version: 2.4.1(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0)
+  react-icons:
+    specifier: ^5.1.0
+    version: 5.1.0(react@18.2.0)
   tslib:
     specifier: ^2.6.2
     version: 2.6.2
@@ -8619,6 +8628,11 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
+  /helmet@7.1.0:
+    resolution: {integrity: sha512-g+HZqgfbpXdCkme/Cd/mZkV0aV3BZZZSugecH03kl38m/Kmdx8jKjBikpDj2cr+Iynv4KpYEviojNdTJActJAg==}
+    engines: {node: '>=16.0.0'}
+    dev: false
+
   /hermes-estree@0.15.0:
     resolution: {integrity: sha512-lLYvAd+6BnOqWdnNbP/Q8xfl8LOGw4wVjfrNd9Gt8eoFzhNBRVD95n4l2ksfMVOoxuVyegs85g83KS9QOsxbVQ==}
     dev: false
@@ -12299,6 +12313,14 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - csstype
+    dev: false
+
+  /react-icons@5.1.0(react@18.2.0):
+    resolution: {integrity: sha512-D3zug1270S4hbSlIRJ0CUS97QE1yNNKDjzQe3HqY0aefp2CBn9VgzgES27sRR2gOvFK+0CNx/BW0ggOESp6fqQ==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:

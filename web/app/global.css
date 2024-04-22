@@ -2,18 +2,583 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Woodsmoke Color Preset */
+:root {
+  --color-50: #F5F5F6;  /* Very Light */
+  --color-100: #E6E6E7; /* Lighter */
+  --color-200: #CFD0D2; /* Light */
+  --color-300: #ADAEB3; /* Regular */
+  --color-400: #84858C; /* Medium */
+  --color-500: #696A71; /* Dark */
+  --color-600: #5A5B60; /* Darker */
+  --color-700: #4C4D52; /* Very Dark */
+  --color-800: #434347; /* Extremely Dark */
+  --color-900: #3B3B3E; /* Super Dark */
+  --color-950: #0F0F10; /* Ultra Dark */
+}
+
+/* Classes */
+.tab {
+  --tab-border: 2px; /* border width of tab */
+  --tab-border-color: var(--color-300); /* border color of tab */
+  --tab-padding: 12px; /* horizontal padding of tab */
+  --tab-bg: var(--color-500); /* background color of tabs-lifted */
+  --tab-radius: 0.375rem; /* border radius of tabs-lifted */
+  --tab-corner-bg: var(--color-400); /* background color of tabs-lifted corner */
+  --circle-pos: 16px; /* position of circle in the corner of tabs-lifted */
+  --tab-grad: 16px; /* radial-gradient size in the corner of tabs-lifted */
+}
+
+.countdown {
+  --value: 24; /* value of countdown */
+}
+
+.radial-progress {
+  --value: 50; /* value of progress circle */
+  --size: 200px; /* size of progress circle */
+  --thickness: 20px; /* thickness of progress circle */
+}
+
+.tooltip {
+  --tooltip-color: var(--color-500); /* background color of tooltip */
+  --tooltip-text-color: #fff; /* text color of tooltip */
+  --tooltip-offset: 8px; /* offset of tooltip from target element */
+  --tooltip-tail: 8px; /* size of tooltip tail */
+  --tooltip-tail-offset: 50%; /* offset of tooltip tail from target element */
+}
+
+.checkbox {
+  --chkbg: var(--color-500); /* background color of checkbox */
+  --chkfg: #fff; /* foreground color of checkbox */
+}
+
+.toggle {
+  --tglbg: var(--color-500); /* background color of toggle */
+  --handleoffset: 16px; /* offset of toggle handle */
+}
+
+.range {
+  --filler-size: 20px; /* size of range thumb */
+  --filler-offset: 50%; /* offset of range thumb */
+  --range-shdw: var(--color-200); /* shadow color of range thumb */
+}
+
+.glass {
+  --glass-blur: 20px; /* blur value of glass effect */
+  --glass-opacity: 0.8; /* opacity of glass effect */
+  --glass-border-opacity: 0.4; /* opacity of glass border */
+  --glass-reflex-degree: 45deg; /* degree of glass reflex */
+  --glass-reflex-opacity: 0.2; /* opacity of glass reflex */
+  --glass-text-shadow-opacity: 0.3; /* opacity of text shadow */
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Additional CSS */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body */
 html,
 body {
   height: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-900);
+  margin: 0;
+  padding: 0;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligns children (divs) to each space extremity */
+  padding: 0.5rem 1rem; /* Adds padding around the navbar */
+}
+
+.menu-horizontal {
+  display: flex;
+  list-style: none; /* Removes default list styling */
+  gap: 1rem; /* Adds space between menu items */
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: inherit; /* Inherits text color from parent */
+}
+
+.btn {
+  padding: 0.5rem 1rem; /* Adds padding inside the button */
+  cursor: pointer; /* Shows a pointer cursor on hover */
+  text-decoration: none; /* Removes underline from links */
+}
+
+/* Links */
+a {
+  color: var(--color-500);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-600);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--color-500);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-600);
+}
+
+/* Shadows */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Header */
+.header {
+  background-color: var(--color-50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-500);
+}
+
+.header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-50);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-500);
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .header .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Social Media Links */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-media a {
+  color: var(--color-500);
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: var(--color-600);
+}
+
+/* Info Section */
+.info-section {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.info-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 1rem;
+}
+
+.info-section p {
+  color: var(--color-700);
+  line-height: 1.6;
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Icons */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Checkout and Donation Styles */
+.checkout-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.donation-input,
+.payment-input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-400);
+  border-radius: 0.375rem;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.donation-button,
+.payment-button {
+  background-color: var(--color-500);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donation-button:hover,
+.payment-button:hover {
+  background-color: var(--color-600);
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-200);
+}
+
+.table th {
+  background-color: var(--color-100);
+}
+
+/* Hero Text Styles */
+.hero {
+  background: linear-gradient(to right, var(--color-500), var(--color-700));
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Description Texts */
+.description-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-700);
+  margin-bottom: 1rem;
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  fill: var(--color-500);
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: var(--color-700);
+}
+
+/* FAQ */
+.faq {
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+  color: var(--color-700);
+}
+
+/* Tokenomics */
+.tokenomics {
+  margin-bottom: 2rem;
+}
+
+.tokenomics-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tokenomics-item:hover {
+  transform: translateY(-5px);
+}
+
+.tokenomics-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.tokenomics-details {
+  color: var(--color-700);
+}
+
+/* Details */
+.details {
+  margin-bottom: 2rem;
+}
+
+.details-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.details-item:hover {
+  transform: translateY(-5px);
+}
+
+.details-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.details-description {
+  color: var(--color-700);
+}
+
+/* List */
+.list {
+  margin-bottom: 2rem;
+}
+
+.list-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.list-item:hover {
+  transform: translateY(-5px);
+}
+
+.list-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.list-items {
+  color: var(--color-700);
+}
+
+/* Donuts */
+.donuts {
+  margin-bottom: 2rem;
+}
+
+.donut-item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.donut-item:hover {
+  transform: translateY(-5px);
+}
+
+.donut-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 0.5rem;
+}
+
+.donut-description {
+  color: var(--color-700);
+}
+
+/* Wallet Adapters */
 .wallet-adapter-button-trigger {
   background: rgb(0, 0, 0) !important;
   border-radius: 6px !important;
   padding-left: 16px !important;
   padding-right: 16px !important;
 }
+
 .wallet-adapter-dropdown-list,
 .wallet-adapter-button {
   font-family: inherit !important;
 }
+
+/* Network */
+.network {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.network h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-700);
+  margin-bottom: 1rem;
+}
+
+.network p {
+  color: var(--color-700);
+  line-height: 1.6;
+}
+
+/* Cluster Buttons */
+.cluster-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cluster-button {
+  background-color: var(--color-500);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cluster-button:hover {
+  background-color: var(--color-600);
+}
+

@@ -1,5 +1,5 @@
-import CharityrFeature from '@/components/charity/charity-feature'
+import CharityCampaigns from '@/components/charity/charity-campaigns'
 
 export default function Page() {
-  return <CharityFeature />
+  return <CharityCampaigns />
 }
